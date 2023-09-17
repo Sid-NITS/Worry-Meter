@@ -51,8 +51,10 @@ function clearInputFieldEl() {
 
 function appendItemTotoDoListEl(item) {
     let itemID = item[0]
-    let itemValue = item[1]
-
+    let itemValue = item[1].trim()
+    if (itemValue === "") {
+        return
+    }
     let newEl = document.createElement("li")
     newEl.textContent = itemValue
 
